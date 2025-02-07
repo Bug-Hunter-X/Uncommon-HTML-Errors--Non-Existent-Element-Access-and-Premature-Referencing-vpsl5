@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Error</title>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <div id="myDiv"></div>
+  <script>
+    //Attempting to access a non-existent element
+    const myElement = document.getElementById("myDiv");
+    myElement.innerHTML = "<p>This should be in the div.</p>";
+    //Another common error is using an element before its declared in the HTML 
+    // This will throw an error because element is declared after the access
+    document.getElementById('elementBefore').innerHTML = 'This is an error!';
+    const elementBefore = document.createElement('p'); 
+    elementBefore.id = 'elementBefore';
+    document.body.appendChild(elementBefore);
+    
+  </script>
+</body>
+</html>
