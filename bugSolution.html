@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Corrected HTML</title>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <div id="myDiv"></div>
+  <script>
+    //Check if element exists before accessing it
+    const myElement = document.getElementById("myDiv");
+    if (myElement) {
+      myElement.innerHTML = "<p>This is now in the div.</p>";
+    } else {
+      console.error("Element with id 'myDiv' not found.");
+    }
+
+    //Correct way to create and use an element
+    const newElement = document.createElement('p');
+    newElement.id = 'elementBefore';
+    newElement.textContent = 'This will not throw an error';
+    document.body.appendChild(newElement);
+  </script>
+</body>
+</html>
